@@ -51,6 +51,8 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  Widget center({bool? when}) => when != false ? Center(child: this) : this;
+
   Widget toRight({bool? when}) => when != false
       ? Align(
           alignment: AlignmentDirectional.centerEnd,
