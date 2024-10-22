@@ -120,4 +120,43 @@ extension WidgetExtensions on Widget {
               child: this,
             )
           : this;
+
+  Widget percent({
+    double? width,
+    double? height,
+    bool? when,
+  }) =>
+      when != false
+          ? FractionallySizedBox(
+              widthFactor: width,
+              heightFactor: height,
+              child: this,
+            )
+          : this;
+
+  Widget percentOfScreen({
+    double? width,
+    double? height,
+    bool? when,
+  }) =>
+      when != false
+          ? Builder(
+              builder: (context) {
+                final size = MediaQuery.sizeOf(context);
+                return SizedBox(
+                  width: width != null ? size.width * width : null,
+                  height: height != null ? size.height * height : null,
+                  child: this,
+                );
+              },
+            )
+          : this;
+
+  Widget tip(String? message, {bool? when}) => when != false && message != null
+      ? Tooltip(
+          waitDuration: const Duration(milliseconds: 600),
+          message: message,
+          child: this,
+        )
+      : this;
 }

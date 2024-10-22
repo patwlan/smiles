@@ -20,6 +20,7 @@
 import 'package:flutter/material.dart';
 import 'package:smiles/src/headline.dart';
 import 'package:smiles/src/text.dart';
+import 'package:smiles/src/widget_extensions.dart';
 
 ///
 /// String Extensions. Helps to convert a string to a Text or Button widget.
@@ -38,14 +39,17 @@ extension StringExtensions on String {
 
   SmallHeadline get h3 => SmallHeadline(this);
 
-  Widget onPressed(VoidCallback? onPressed) => TextButton(
-        onPressed: onPressed,
+  Widget onPressed(VoidCallback? onPressed,
+          {String? tooltip, bool disabled = false}) =>
+      TextButton(
+        onPressed: disabled ? null : onPressed,
         child: Text(this),
-      );
+      ).tip(tooltip);
 
-  Widget onButtonPressed(VoidCallback? onPressed, {bool disabled = false}) =>
+  Widget onButtonPressed(VoidCallback? onPressed,
+          {String? tooltip, bool disabled = false}) =>
       ElevatedButton(
         onPressed: disabled ? null : onPressed,
         child: Text(this),
-      );
+      ).tip(tooltip);
 }
