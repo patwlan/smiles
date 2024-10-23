@@ -23,9 +23,9 @@ import 'package:flutter/material.dart';
 /// Layout Extensions
 ///
 extension LayoutExtensions on List<Widget> {
-  Widget row([double? padding]) => Row(children: this);
+  Widget row() => Row(children: this);
 
-  Widget column([double? padding]) => Column(children: this);
+  Widget column() => Column(children: this);
 
   Widget grid(int columns, {double? padding}) => GridView.count(
         crossAxisCount: columns,
