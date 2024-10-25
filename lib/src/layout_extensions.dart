@@ -23,7 +23,10 @@ import 'package:flutter/material.dart';
 /// Layout Extensions
 ///
 extension LayoutExtensions on List<Widget> {
-  Widget row() => Row(children: this);
+  Widget row({bool min = false}) => Row(
+        mainAxisSize: min ? MainAxisSize.min : MainAxisSize.max,
+        children: this,
+      );
 
   Widget column() => Column(children: this);
 
