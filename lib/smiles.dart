@@ -8,3 +8,5 @@ export 'src/padding_theme.dart';
 export 'src/string_extensions.dart';
 export 'src/widget_extensions.dart';
 export 'src/layout_extensions.dart';
+export 'src/strings.dart';
+export 'src/lists.dart';
