@@ -13,7 +13,7 @@ extension Strings on String {
   }
 
   // Returns the substring after the first occurrence of delimiter.
-  String? substringAfter(Pattern delimiter) {
+  String substringAfter(Pattern delimiter) {
     return substring(indexOf(delimiter) + 1);
   }
 }
